@@ -1,0 +1,3 @@
+/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/cmake-build-debug/CMakeFiles/z1.dir

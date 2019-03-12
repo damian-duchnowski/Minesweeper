@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/main.cpp
+iostream
+-
+minesboard.h
+/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/minesboard.h
+
+/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/minesboard.cpp
+iostream
+-
+minesboard.h
+/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/minesboard.h
+
+/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/minesboard.h
+
