@@ -28,7 +28,7 @@ public:
     //
     // NOTE: You may assume, that width and height are not larger than 100
     // HINT: It is OK to allocate 100x100 board and only use part of it
-    MinesweeperBoard(); // MinesweeperBoard(int width, int height, GameMode mode );
+    MinesweeperBoard(int width, int height, GameMode mode);
     void debug_display() const;
 
     // simple getters - return appropriate values (passed to or calculated in constructor)

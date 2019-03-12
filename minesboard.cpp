@@ -2,13 +2,14 @@
 // Created by Damian Duchnowski on 2019-03-05.
 //
 
+#include <cmath>
 #include <iostream>
 #include "minesboard.h"
 using namespace std;
 
-MinesweeperBoard::MinesweeperBoard() {
-    MinesweeperBoard::width = 10;
-    MinesweeperBoard::height = 10;
+MinesweeperBoard::MinesweeperBoard(int width, int height, GameMode mode) {
+    MinesweeperBoard::width = width;
+    MinesweeperBoard::height = height;
 
     for (int i = 0; i < MinesweeperBoard::height; ++i) {
         for (int j = 0; j < MinesweeperBoard::width; ++j) {
@@ -16,9 +17,53 @@ MinesweeperBoard::MinesweeperBoard() {
         }
     }
 
-    board[0][0] = {true, false, false};
-    board[1][1] = {false, false, true};
-    board[0][2] = {true, true, false};
+    int number_of_fields = MinesweeperBoard::width * MinesweeperBoard::height;
+    double number_of_mines = 0;
+
+    switch (mode) {
+        case EASY:
+            number_of_mines = floor(0.1 * number_of_fields);
+            break;
+
+        case NORMAL:
+            number_of_mines = floor(0.2 * number_of_fields);
+            break;
+
+        case HARD:
+            number_of_mines = floor(0.3 * number_of_fields);
+            break;
+
+        case DEBUG:
+            for (int i = 0; i < MinesweeperBoard::height; ++i) {
+                for (int j = 0; j < MinesweeperBoard::width; ++j) {
+
+                    if (i == j) {
+                        board[i][j].hasMine = true;
+                    }
+
+                    if (i == 0) {
+                        board[i][j].hasMine = true;
+                    }
+
+                    if (j == 0 && i % 2 == 0) {
+                        board[i][j].hasMine = true;
+                    }
+                }
+            }
+            break;
+    }
+
+    for (int k = 0; k < number_of_mines; ++k) {
+        int x = rand() % MinesweeperBoard::height;
+        int y = rand() % MinesweeperBoard::width;
+
+        if (board[y][x].hasMine) {
+            k--;
+            continue;
+        }
+
+        board[y][x].hasMine = true;
+    }
 }
 
 void MinesweeperBoard::debug_display() const {
@@ -48,7 +93,26 @@ void MinesweeperBoard::debug_display() const {
 
             cout << "[" << hasMine << isRevealed << hasFlag << "]";
         }
-
         cout << endl;
     }
+}
+
+int MinesweeperBoard::getBoardWidth() const {
+    return MinesweeperBoard::width;
+}
+
+int MinesweeperBoard::getBoardHeight() const {
+    return MinesweeperBoard::height;
+}
+
+int MinesweeperBoard::getMineCount() const {
+    int mine_count = 0;
+    for (int i = 0; i < MinesweeperBoard::width; ++i) {
+        for (int j = 0; j < MinesweeperBoard::height; ++j) {
+            if (board[i][j].hasMine) {
+                mine_count++;
+            }
+        }
+    }
+    return mine_count;
 }

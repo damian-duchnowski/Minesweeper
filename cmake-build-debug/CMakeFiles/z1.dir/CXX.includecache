@@ -7,12 +7,8 @@
 #IncludeRegexTransform: 
 
 /Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/main.cpp
-iostream
+ctime
 -
-minesboard.h
-/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/minesboard.h
-
-/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/minesboard.cpp
 iostream
 -
 minesboard.h
