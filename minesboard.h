@@ -60,6 +60,33 @@ public:
     // - either x or y is outside board
     // - game is already finished
     void toggleFlag(int x, int y);
+
+    // try to reveal the field at (x,y)
+    // Do nothing if any of the following is true
+    // - field was already revealed
+    // - either x or y is outside board
+    // - game is already finished
+    // - there is a flag on the field
+    //
+    // If the field was not revealed and there is no mine on it - reveal it
+    // If the field was not revealed and there is a mine on it:
+    // - if its the first player action - move mine to another location, reveal field (not in DEBUG mode!)
+    // - reveal it and finish game
+    void revealField(int x, int y);
+
+    // my function for checking if player's first move
+    bool checkIfFirstMove() const;
+
+    // return true if the field was revealed
+    bool isRevealed(int x, int y) const;
+
+    // return current game state:
+    // - FINISHED_LOSS - if the player revealed field with mine
+    // - FINISHED_WIN - if the player won the game:
+    // --- all mines were flagged and there are no flags on fields without mines, or
+    // --- all unrevealed fields have mines
+    // - RUNNING - if the game is not yet finished
+    GameState getGameState() const;
 };
 
 #endif //Z1_MINESBOARD_H

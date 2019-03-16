@@ -134,4 +134,53 @@ void MinesweeperBoard::toggleFlag(int x, int y) {
         if (board[y][x].hasFlag) board[y][x].hasFlag = false;
         else board[y][x].hasFlag = true;
     }
+
+    if (board[y][x].isRevealed);
+    if (x < 0 || x > MinesweeperBoard::width || y < 0 || y > MinesweeperBoard::height);
+    // ADD GAMESTATE IF STATEMENT HERE!!!
+}
+
+void MinesweeperBoard::revealField(int x, int y) {
+    if (board[y][x].isRevealed);
+    if (x < 0 || x > MinesweeperBoard::width || y < 0 || y > MinesweeperBoard::height);
+    // ADD GAMESTATE IF STATEMENT HERE!!!
+    if (board[y][x].hasFlag);
+
+    if (!board[y][x].isRevealed && !board[y][x].hasMine) board[y][x].isRevealed = true;
+    if (!board[y][x].isRevealed && board[y][x].hasMine) {
+        if (checkIfFirstMove()) {
+            int new_x = 0;
+            int new_y = 0;
+            do {
+                new_x = rand() % MinesweeperBoard::height;
+                new_y = rand() % MinesweeperBoard::width;
+            }
+            while (board[new_y][new_x].hasMine);
+            board[y][x].hasMine = false;
+            board[new_y][new_x].hasMine = true;
+            board[y][x].isRevealed = true;
+        }
+        else board[y][x].isRevealed = true;
+    }
+}
+
+bool MinesweeperBoard::checkIfFirstMove() const {
+    for (int i = 0; i < MinesweeperBoard::height; ++i) {
+        for (int j = 0; j < MinesweeperBoard::width; ++j) {
+            if (isRevealed(i, j)) return false;
+        }
+    }
+    return true;
+}
+
+bool MinesweeperBoard::isRevealed(int x, int y) const {
+    return board[y][x].isRevealed;
+}
+
+GameState MinesweeperBoard::getGameState() const {
+    for (int i = 0; i < MinesweeperBoard::height; ++i) {
+        for (int j = 0; j < MinesweeperBoard::width; ++j) {
+            if (board[i][j].hasMine && board[i][j].isRevealed) return FINISHED_LOSS;
+        }
+    }
 }
