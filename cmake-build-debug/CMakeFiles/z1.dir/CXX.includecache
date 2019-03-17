@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/main.cpp
+ctime
+-
+iostream
+-
+minesboard.h
+/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/minesboard.h
+
 /Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/minesboard.cpp
 cmath
 -
