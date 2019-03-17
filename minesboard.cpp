@@ -55,8 +55,6 @@ MinesweeperBoard::MinesweeperBoard(int width, int height, GameMode mode) {
 
         board[y][x].hasMine = true;
     }
-
-    board[1][0].isRevealed = true;
 }
 
 void MinesweeperBoard::debug_display() const {
@@ -194,7 +192,7 @@ char MinesweeperBoard::getFieldInfo(int x, int y) const {
     if (board[y][x].isRevealed && board[y][x].hasMine) return 'x';
     if (board[y][x].isRevealed && MinesweeperBoard::countMines(x, y) == 0) return ' ';
     if (board[y][x].isRevealed && MinesweeperBoard::countMines(x, y) != 0) {
-        char tmp = static_cast<char>(MinesweeperBoard::countMines(x, y)) + '0';
+        char tmp = static_cast<char>(MinesweeperBoard::countMines(x, y) - 1) + '0';
         return tmp;
     }
 }
