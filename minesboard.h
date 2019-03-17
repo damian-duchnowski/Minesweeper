@@ -87,6 +87,15 @@ public:
     // --- all unrevealed fields have mines
     // - RUNNING - if the game is not yet finished
     GameState getGameState() const;
+
+    // convenience function - returns useful information about field in one function call
+    // if x or y is outside board                             - return '#' character
+    // if the field is not revealed and has a flag            - return 'F' character
+    // if the field is not revealed and does not have a flag  - return '_' (underscore) character
+    // if the field is revealed and has mine                  - return 'x' character
+    // if the field is revealed and has 0 mines around        - return ' ' (space) character
+    // if the field is revealed and has some mines around     - return '1' ... '8' (number of mines as a digit)
+    char getFieldInfo(int x, int y) const;
 };
 
 #endif //Z1_MINESBOARD_H

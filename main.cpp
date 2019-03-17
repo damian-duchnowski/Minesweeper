@@ -10,4 +10,5 @@ int main() {
     std::cout << board.countMines(9, 2);
     std::cout << board.countMines(1, 2);
     std::cout << board.countMines(7, 6);
+    std::cout << board.getFieldInfo(0, 1);
 }
