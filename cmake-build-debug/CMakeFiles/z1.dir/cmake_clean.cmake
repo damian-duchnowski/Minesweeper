@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/z1.dir/main.cpp.o"
   "CMakeFiles/z1.dir/minesboard.cpp.o"
+  "CMakeFiles/z1.dir/MSBoardTextView.cpp.o"
+  "CMakeFiles/z1.dir/MSTextController.cpp.o"
   "z1.pdb"
   "z1"
 )

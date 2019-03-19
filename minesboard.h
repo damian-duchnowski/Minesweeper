@@ -19,6 +19,9 @@ class MinesweeperBoard {
     int width;
     int height;
 
+    // my function for checking if player's first move
+    bool checkIfFirstMove() const;
+
 public:
     // generate a width*height sized board with the number of mines that depend on GameMode:
     // - EASY   - 10% of game fields with mines (random)
@@ -73,9 +76,6 @@ public:
     // - if its the first player action - move mine to another location, reveal field (not in DEBUG mode!)
     // - reveal it and finish game
     void revealField(int x, int y);
-
-    // my function for checking if player's first move
-    bool checkIfFirstMove() const;
 
     // return true if the field was revealed
     bool isRevealed(int x, int y) const;

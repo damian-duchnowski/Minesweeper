@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/MSBoardTextView.cpp" "/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/cmake-build-debug/CMakeFiles/z1.dir/MSBoardTextView.cpp.o"
+  "/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/MSTextController.cpp" "/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/cmake-build-debug/CMakeFiles/z1.dir/MSTextController.cpp.o"
   "/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/main.cpp" "/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/cmake-build-debug/CMakeFiles/z1.dir/main.cpp.o"
   "/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/minesboard.cpp" "/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/cmake-build-debug/CMakeFiles/z1.dir/minesboard.cpp.o"
   )

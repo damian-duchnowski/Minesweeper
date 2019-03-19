@@ -123,6 +123,60 @@ z1/fast:
 	$(MAKE) -f CMakeFiles/z1.dir/build.make CMakeFiles/z1.dir/build
 .PHONY : z1/fast
 
+MSBoardTextView.o: MSBoardTextView.cpp.o
+
+.PHONY : MSBoardTextView.o
+
+# target to build an object file
+MSBoardTextView.cpp.o:
+	$(MAKE) -f CMakeFiles/z1.dir/build.make CMakeFiles/z1.dir/MSBoardTextView.cpp.o
+.PHONY : MSBoardTextView.cpp.o
+
+MSBoardTextView.i: MSBoardTextView.cpp.i
+
+.PHONY : MSBoardTextView.i
+
+# target to preprocess a source file
+MSBoardTextView.cpp.i:
+	$(MAKE) -f CMakeFiles/z1.dir/build.make CMakeFiles/z1.dir/MSBoardTextView.cpp.i
+.PHONY : MSBoardTextView.cpp.i
+
+MSBoardTextView.s: MSBoardTextView.cpp.s
+
+.PHONY : MSBoardTextView.s
+
+# target to generate assembly for a file
+MSBoardTextView.cpp.s:
+	$(MAKE) -f CMakeFiles/z1.dir/build.make CMakeFiles/z1.dir/MSBoardTextView.cpp.s
+.PHONY : MSBoardTextView.cpp.s
+
+MSTextController.o: MSTextController.cpp.o
+
+.PHONY : MSTextController.o
+
+# target to build an object file
+MSTextController.cpp.o:
+	$(MAKE) -f CMakeFiles/z1.dir/build.make CMakeFiles/z1.dir/MSTextController.cpp.o
+.PHONY : MSTextController.cpp.o
+
+MSTextController.i: MSTextController.cpp.i
+
+.PHONY : MSTextController.i
+
+# target to preprocess a source file
+MSTextController.cpp.i:
+	$(MAKE) -f CMakeFiles/z1.dir/build.make CMakeFiles/z1.dir/MSTextController.cpp.i
+.PHONY : MSTextController.cpp.i
+
+MSTextController.s: MSTextController.cpp.s
+
+.PHONY : MSTextController.s
+
+# target to generate assembly for a file
+MSTextController.cpp.s:
+	$(MAKE) -f CMakeFiles/z1.dir/build.make CMakeFiles/z1.dir/MSTextController.cpp.s
+.PHONY : MSTextController.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -186,6 +240,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... z1"
+	@echo "... MSBoardTextView.o"
+	@echo "... MSBoardTextView.i"
+	@echo "... MSBoardTextView.s"
+	@echo "... MSTextController.o"
+	@echo "... MSTextController.i"
+	@echo "... MSTextController.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

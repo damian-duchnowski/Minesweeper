@@ -80,6 +80,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/MSBoardTextView.cpp">
+			<Option target="z1"/>
+		</Unit>
+		<Unit filename="/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/MSBoardTextView.h">
+			<Option target="z1"/>
+		</Unit>
+		<Unit filename="/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/MSTextController.cpp">
+			<Option target="z1"/>
+		</Unit>
+		<Unit filename="/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/MSTextController.h">
+			<Option target="z1"/>
+		</Unit>
 		<Unit filename="/Users/damianduchnowski/CLionProjects/sem2/(P) Programowanie Obiektowe/lab2/z1/main.cpp">
 			<Option target="z1"/>
 		</Unit>
