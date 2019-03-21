@@ -8,9 +8,9 @@
 #include "minesboard.h"
 
 class MSBoardTextView {
-    MinesweeperBoard &board;
+    MinesweeperBoard& board;
 public:
-    explicit MSBoardTextView(MinesweeperBoard &b);
+    explicit MSBoardTextView(MinesweeperBoard& b);
     void display() const;
 };
 

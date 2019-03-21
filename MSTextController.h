@@ -9,11 +9,11 @@
 #include "MSBoardTextView.h"
 
 class MSTextController {
-    MinesweeperBoard &board;
-    MSBoardTextView &view;
+    MinesweeperBoard& board;
+    MSBoardTextView& view;
 
 public:
-    MSTextController(MinesweeperBoard &b, MSBoardTextView &v);
+    MSTextController(MinesweeperBoard& b, MSBoardTextView& v);
     void play();
 };
 

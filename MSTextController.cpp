@@ -4,8 +4,10 @@
 
 #include "MSTextController.h"
 
-MSTextController::MSTextController(MinesweeperBoard &b, MSBoardTextView &v):board(b), view(v) {}
+MSTextController::MSTextController(MinesweeperBoard& b, MSBoardTextView& v)
+        :board(b), view(v) { }
 
-void MSTextController::play() {
-    
+void MSTextController::play()
+{
+
 }

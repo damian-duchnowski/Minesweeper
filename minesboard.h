@@ -5,13 +5,13 @@
 #ifndef Z1_MINESBOARD_H
 #define Z1_MINESBOARD_H
 
-enum GameMode  { DEBUG, EASY, NORMAL, HARD };
+enum GameMode { DEBUG, EASY, NORMAL, HARD };
 enum GameState { RUNNING, FINISHED_WIN, FINISHED_LOSS };
 
 struct Field {
-    bool hasMine;
-    bool hasFlag;
-    bool isRevealed;
+  bool hasMine;
+  bool hasFlag;
+  bool isRevealed;
 };
 
 class MinesweeperBoard {

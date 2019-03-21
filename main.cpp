@@ -3,10 +3,11 @@
 #include "minesboard.h"
 #include "MSBoardTextView.h"
 
-int main() {
+int main()
+{
     srand(time(NULL));
     MinesweeperBoard board(9, 7, DEBUG);
-    MSBoardTextView view (board);
+    MSBoardTextView view(board);
     view.display();
 //    if you want to test countMines below, comment out the marked line in this function
 //    std::cout << board.countMines(0, 1);
