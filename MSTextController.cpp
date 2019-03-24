@@ -21,9 +21,9 @@ void MSTextController::displayGreeting()
               << std::endl;
 
     std::cout
-            << "┌───────────────────────────────────────────────────────────────────────────────────────────────────────────┐\n"
-               "│ Po planszy poruszaj się klawiszami strzałek, r - odkrywa aktualnie wybrane pole, f - stawia na nim flagę. │\n"
-               "└───────────────────────────────────────────────────────────────────────────────────────────────────────────┘" << std::endl;
+            << "┌───────────────────────────────────────────────────────────────────────────────────────────────────────┐\n"
+               "│ Po planszy poruszaj się klawiszami WASD, r - odkrywa aktualnie wybrane pole, f - stawia na nim flagę. │\n"
+               "└───────────────────────────────────────────────────────────────────────────────────────────────────────┘" << std::endl;
 }
 
 void MSTextController::play()

@@ -17,4 +17,5 @@ void MSBoardTextView::display(int x, int y) const
         }
         std::cout << std::endl;
     }
+    std::cout << std::endl;
 }
