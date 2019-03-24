@@ -12,6 +12,7 @@ class MSTextController {
     MinesweeperBoard& board;
     MSBoardTextView& view;
 
+    void displayGreeting();
 public:
     MSTextController(MinesweeperBoard& b, MSBoardTextView& v);
     void play();

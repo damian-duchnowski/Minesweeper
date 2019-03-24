@@ -11,7 +11,7 @@ class MSBoardTextView {
     MinesweeperBoard& board;
 public:
     explicit MSBoardTextView(MinesweeperBoard& b);
-    void display() const;
+    void display(int x, int y) const;
 };
 
 #endif //Z1_MSBOARDTEXTVIEW_H

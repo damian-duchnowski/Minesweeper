@@ -8,11 +8,12 @@
 MSBoardTextView::MSBoardTextView(MinesweeperBoard& b)
         :board(b) { }
 
-void MSBoardTextView::display() const
+void MSBoardTextView::display(int x, int y) const
 {
     for (int i = 0; i<board.getBoardHeight(); ++i) {
         for (int j = 0; j<board.getBoardWidth(); ++j) {
-            std::cout << "[" << board.getFieldInfo(i, j) << "]";
+            if (i==x && j==y) std::cout << "{" << board.getFieldInfo(i, j) << "}";
+            else std::cout << "[" << board.getFieldInfo(i, j) << "]";
         }
         std::cout << std::endl;
     }

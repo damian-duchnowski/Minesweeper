@@ -35,8 +35,8 @@ MinesweeperBoard::MinesweeperBoard(int width, int height, GameMode mode)
         for (int i = 0; i<MinesweeperBoard::height; ++i) {
             for (int j = 0; j<MinesweeperBoard::width; ++j) {
                 if (i==j) board[i][j].hasMine = true;
-                if (i==0) board[i][j].hasMine = true;
-                if (j==0 && i%2==0) board[i][j].hasMine = true;
+                if (i==0) board[j][i].hasMine = true;
+                if (j==0 && i%2==0) board[j][i].hasMine = true;
             }
         }
         break;
@@ -189,15 +189,11 @@ bool MinesweeperBoard::isRevealed(int x, int y) const
     return board[y][x].isRevealed;
 }
 
-GameState MinesweeperBoard::getGameState() const
-{
+GameState MinesweeperBoard::getGameState() const {
     for (int i = 0; i<MinesweeperBoard::height; ++i) {
         for (int j = 0; j<MinesweeperBoard::width; ++j) {
-            if (board[i][j].hasMine && !board[i][j].hasFlag) return RUNNING;
-            if (!board[i][j].hasMine && board[i][j].hasFlag) return RUNNING;
-            if (board[i][j].hasMine && !board[i][j].isRevealed) return RUNNING;
-            if (!board[i][j].hasMine && !board[i][j].isRevealed) return RUNNING;
             if (board[i][j].hasMine && board[i][j].isRevealed) return FINISHED_LOSS;
+            if (board[i][j].hasMine && !MinesweeperBoard::hasFlag(i, j)) return RUNNING;
         }
     }
     return FINISHED_WIN;
@@ -212,4 +208,5 @@ char MinesweeperBoard::getFieldInfo(int x, int y) const
     if (board[y][x].isRevealed && MinesweeperBoard::countMines(x, y)==0) return ' ';
     if (board[y][x].isRevealed && MinesweeperBoard::countMines(x, y)!=0)
         return static_cast<char>(MinesweeperBoard::countMines(x, y))+'0';
+    else return '?';    // FOR DEBUG PURPOSES
 }
