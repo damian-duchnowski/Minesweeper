@@ -22,6 +22,9 @@ class MinesweeperBoard {
     // my function for checking if player's first move
     bool checkIfFirstMove() const;
 
+    // my function for checking the amount of unrevealed fields without mines
+    int getFieldCount() const;
+
 public:
     // generate a width*height sized board with the number of mines that depend on GameMode:
     // - EASY   - 10% of game fields with mines (random)
