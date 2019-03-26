@@ -197,6 +197,7 @@ int MinesweeperBoard::getFieldCount() const
             if (!board[i][j].isRevealed && !board[i][j].hasMine) counter++;
         }
     }
+    return counter;
 }
 
 GameState MinesweeperBoard::getGameState() const
