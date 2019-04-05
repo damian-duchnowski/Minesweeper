@@ -1,22 +1,36 @@
 #include <ctime>
 #include <iostream>
+#include <SFML/Graphics.hpp>
 #include "minesboard.h"
 #include "MSBoardTextView.h"
 #include "MSTextController.h"
+#include "MSSFMLView.h"
 
 int main()
 {
+    // create the window
+    sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
+
     srand(time(NULL));
     MinesweeperBoard board(9, 7, EASY);
-    MSBoardTextView view(board);
-    MSTextController ctrl (board, view);
+    MSSFMLView view(board, 75, 50, 50);
 
-    ctrl.play();
+    // run the program as long as the window is open
+    while (window.isOpen()) {
+        // check all the window's events that were triggered since the last iteration of the loop
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            // "close requested" event: we close the window
+            if (event.type==sf::Event::Closed)
+                window.close();
+        }
 
-//    if you want to test countMines below, comment out the marked line in this function
-//    std::cout << board.countMines(0, 1);
-//    std::cout << board.countMines(9, 2);
-//    std::cout << board.countMines(1, 2);
-//    std::cout << board.countMines(7, 6);
-//    std::cout << board.getFieldInfo(0, 1);
+        window.clear(sf::Color(85, 85, 85));
+        view.draw(window);
+
+        // end the current frame
+        window.display();
+    }
+
+    return 0;
 }
