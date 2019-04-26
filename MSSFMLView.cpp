@@ -6,32 +6,39 @@
 #include "MSSFMLView.h"
 #include <cmath>
 
-MSSFMLView::MSSFMLView(MinesweeperBoard& b, int fieldSize, int x0, int y0)
+MSSFMLView::MSSFMLView(MinesweeperBoard& b)
         :board(b)
 {
-    sf::Vector2f LG(x0, y0);
+    int fieldSize = (int)(768 - 2*50) / board.getBoardHeight();
 
-    sf::Font font;
+    sf::Vector2f LG((int)(1024 - board.getBoardWidth()*fieldSize) / 2, 50);
+
+    int characterSize[3] = {40, 30, 20};
+    
     font.loadFromFile("Roboto-Bold.ttf");
-
-    for (int k = 0; k<board.getBoardHeight(); ++k) {
-        for (int i = 0; i<board.getBoardWidth(); ++i) {
-            texts[k][i].setFont(font);
-            texts[k][i].setCharacterSize(16);
-            texts[k][i].setFillColor(sf::Color(235, 225, 223));
-            texts[k][i].setPosition(sf::Vector2f(fields[k][i].getPosition().x+0.5*fieldSize,
-                    fields[k][i].getPosition().y+0.5*fieldSize));
-            texts[k][i].setString(board.getFieldInfo(k, i));
-        }
-    }
 
     for (int i = 0; i<board.getBoardHeight(); ++i) {
         for (int j = 0; j<board.getBoardWidth(); ++j) {
             fields[i][j].setSize(sf::Vector2f(fieldSize, fieldSize));
-            fields[i][j].setFillColor(sf::Color(46, 196, 182));     // (231,29,54)
+            fields[i][j].setFillColor(sf::Color(46, 196, 182));
             fields[i][j].setOutlineColor(sf::Color::Black);
             fields[i][j].setOutlineThickness(floor(-0.05*fieldSize));
             fields[i][j].setPosition(sf::Vector2f(LG.x+j*fieldSize, LG.y+i*fieldSize));
+        }
+    }
+
+    for (int k = 0; k<board.getBoardHeight(); ++k) {
+        for (int l = 0; l<board.getBoardWidth(); ++l) {
+            if (board.isRevealed(k, l)) {
+                texts[k][l].setFont(font);
+                if (board.getBoardWidth() == 10) texts[k][l].setCharacterSize(40);
+                else if (board.getBoardWidth() == 20) texts[k][l].setCharacterSize(30);
+                else if (board.getBoardWidth() == 30) texts[k][l].setCharacterSize(20);
+                texts[k][l].setFillColor(sf::Color(235, 225, 223));
+                texts[k][l].setPosition(sf::Vector2f(fields[k][l].getPosition().x+0.35*fieldSize,
+                        fields[k][l].getPosition().y+0.1*fieldSize));
+                texts[k][l].setString(board.getFieldInfo(k, l));
+            }
         }
     }
 }

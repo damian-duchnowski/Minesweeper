@@ -12,9 +12,9 @@ MinesweeperBoard::MinesweeperBoard(int width, int height, GameMode mode)
     MinesweeperBoard::width = width;
     MinesweeperBoard::height = height;
 
-    for (int i = 0; i<MinesweeperBoard::height; ++i) {
-        for (int j = 0; j<MinesweeperBoard::width; ++j) {
-            board[i][j] = {false, false, false};
+    for (int i = 0; i<100; ++i) {
+        for (int j = 0; j<100; ++j) {
+            board[j][i] = {false};
         }
     }
 
@@ -34,7 +34,7 @@ MinesweeperBoard::MinesweeperBoard(int width, int height, GameMode mode)
     case DEBUG:
         for (int i = 0; i<MinesweeperBoard::height; ++i) {
             for (int j = 0; j<MinesweeperBoard::width; ++j) {
-                if (i==j) board[i][j].hasMine = true;
+                if (i==j) board[j][i].hasMine = true;
                 if (i==0) board[j][i].hasMine = true;
                 if (j==0 && i%2==0) board[j][i].hasMine = true;
             }

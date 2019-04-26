@@ -12,8 +12,9 @@ class MSSFMLView {
     MinesweeperBoard& board;
     sf::RectangleShape fields[100][100];
     sf::Text texts[100][100];
+    sf::Font font;
 public:
-    MSSFMLView(MinesweeperBoard& b, int fieldSize, int x0, int y0);
+    MSSFMLView(MinesweeperBoard& b);
     void draw(sf::RenderWindow& window);
 };
 

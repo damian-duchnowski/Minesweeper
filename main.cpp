@@ -9,11 +9,11 @@
 int main()
 {
     // create the window
-    sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
+    sf::RenderWindow window(sf::VideoMode(1024, 768), "My window");
 
     srand(time(NULL));
-    MinesweeperBoard board(9, 7, EASY);
-    MSSFMLView view(board, 75, 50, 50);
+    MinesweeperBoard board(30, 20, DEBUG);
+    MSSFMLView view(board);
 
     // run the program as long as the window is open
     while (window.isOpen()) {
